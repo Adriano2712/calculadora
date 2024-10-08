@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="calculator">
+            <input type="text" v-model="current" class="display" disabled>
+            <div class="buttons">
+                <!-- Números de 0 a 9 -->
+                <button @click="append('0')" class="zero">0</button>
+                <button @click="append('1')">1</button>
+                <button @click="append('2')">2</button>
+                <button @click="append('3')">3</button>
+                <button @click="append('4')">4</button>
+                <button @click="append('5')">5</button>
+                <button @click="append('6')">6</button>
+                <button @click="append('7')">7</button>
+                <button @click="append('8')">8</button>
+                <button @click="append('9')">9</button>
+
+                <!-- Operadores e Ações -->
+                <button @click="clear">C</button>
+                <button class="delete" @click="deleteLast">DEL</button>
+                <button @click="append('/')">/</button>
+                <button @click="append('*')">*</button>
+                <button @click="append('-')">-</button>
+                <button @click="append('+')">+</button>
+                <button @click="append('.')">.</button>
+                <button class="equals" @click="calculate">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
